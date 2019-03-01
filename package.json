@@ -1,0 +1,28 @@
+{
+  "name": "learnreact",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "chart.js": "^2.7.3",
+    "mattermost-redux": "^5.6.2",
+    "react": "^16.6.3",
+    "react-chartjs-2": "^2.7.4",
+    "react-dom": "^16.4.1",
+    "utils": "git+ssh://git@bitbucket.org:andi_ndrecka/utils.git"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "mattermost": "rm -rf corebos_plugin.tar.gz && rm -rf dist_mattermost && mkdir dist_mattermost && cp plugin.json dist_mattermost/ && cp dist/* dist_mattermost/  && tar -czvf corebos_plugin.tar.gz dist_mattermost",
+    "bundle": "yarn build && yarn mattermost"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.44",
+    "@babel/polyfill": "7.0.0-beta.44",
+    "@babel/preset-env": "7.0.0-beta.44",
+    "@babel/preset-react": "7.0.0-beta.44",
+    "@babel/preset-stage-2": "7.0.0-beta.44",
+    "babel-loader": "^8.0.0-beta",
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2"
+  }
+}

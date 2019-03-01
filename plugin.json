@@ -1,0 +1,7 @@
+{
+  "id": "com.corebos.plugins",
+  "name": "coreBOS_plugins",
+  "webapp": {
+    "bundle_path": "main.js"
+  }
+}
