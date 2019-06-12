@@ -34,13 +34,14 @@ const PostMessageAttachment = ({ chartData }) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  const post = getPost(state, ownProps.postId);
+  const postId = ownProps.postId.replace("user-activity-", "");
+  const post = getPost(state, postId);
 
-  if (post.props && post.props.chartdata) {
-    try {
+  try {
+    if (post.props && post.props.chartdata) {
       return { chartData: JSON.parse(post.props.chartdata) };
-    } catch (e) {}
-  }
+    }
+  } catch (e) {}
 
   return {};
 };
